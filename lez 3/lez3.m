@@ -8,12 +8,20 @@ sys = tf(num, den);
 
 bode(sys);
 
-%Potevo anche calcolre fs con l'altro metodo, usando zpkdata e prendendo la
-%costante di tempo più bassa (vedi slides teoria)
-
 fs = 30; %Lo prendo dal diagramma di bode guardando la pulsazione a cui si riduce di 40dB rispetto al guadagno
+Ts1 = 2*pi/fs; % 2*pi perchè fs è in rad/s (da bode)
 
-Ts = 2*pi/fs; % 2*pi perchè fs è in rad/s (da bode)
+%Potevo anche calcolre fs con l'altro metodo, usando zpkdata e prendendo la
+%costante di tempo più bassa [associata al polo più veloce, ossia quello
+%più a sx] e moltiplicando per 1/10
+%(vedi slides teoria)
+
+[z,p,k]=zpkdata(sys,'v');
+Ts2 = (-1/min(real(p)))*1/10;
+
+%scelgo il tempo di campionamento inferiore
+
+Ts = min([Ts1 Ts2]);
 
 %Serie G-campionatore-ZOH
 % campionatore divide solo per Ts, che si semplifica con il Ts a num dello
@@ -25,6 +33,10 @@ zoh2 = tf (1, [Ts/2 1]); %Padé
 s = tf([1 0], 1);
 
 zoh3 = (1/s)*(1 - exp(-s*Ts))/Ts; %Divido per T perchè cos' inglobo il campionatore
+
+%Attenzione: fare le operazioni aritmetiche sui sistemi li sovradimensiona:
+%non fa le cancellazioni polo-zero. Meglio usare la funzione parallel per
+%la somma e series per la serie
 
 %zoh4 = c2d(tf(1,1),Ts,'zoh'); pazzie del prof
 

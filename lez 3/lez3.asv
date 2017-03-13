@@ -1,0 +1,24 @@
+clear
+close all
+
+num = 10;
+den = [0.1 1.1 1];
+
+sys = tf(num, den);
+
+bode(sys);
+
+fs = 30; %Lo prendo dal diagramma di bode guardando la pulsazione a cui si riduce di 40dB rispetto al guadagno
+
+Ts = 2*pi/fs; % 2*pi perchè fs è in rad/s (da bode)
+
+%Serie G-campionatore-ZOH
+% campionatore divide solo per Ts, che si semplifica con il Ts a num dello
+% ZOH
+
+zoh1 = tf (1, 1, 'OutputDelay', Ts/2); %Il num sarebbe Ts, ma non lo mettiamo
+zoh2 = tf (1, [Ts/2 1]);
+
+s = tf([1 0], 1);
+
+zoh3 = (1/s)*(1 - e^(-s

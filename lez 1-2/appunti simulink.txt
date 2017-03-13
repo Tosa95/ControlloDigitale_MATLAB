@@ -1,0 +1,1 @@
+per aprire simulink dare il comando simulink

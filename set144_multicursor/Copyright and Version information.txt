@@ -1,0 +1,17 @@
+-----------------------------------------------------------------------------------------------------------------
+
+Multicursor Cursor Graphics Set 
+
+Version 2.02
+
+Copyright held by ace576-cursors, designed using Realworld Cursor editor freeware, 
+	-Software copyright of Realworld Cursor editor held by Vlastimil Milér and co-Author Jan Milér.
+
+Individual / Personal use of this software is unlimited.
+
+Redistribution of this software is permitted and unlimited but 
+requires the accreditation of the original author (ace576-cursors).
+
+This software is not to be used for profit in any form.
+
+-----------------------------------------------------------------------------------------------------------------

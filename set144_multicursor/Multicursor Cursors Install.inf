@@ -1,0 +1,53 @@
+
+
+[Version]
+signature="$CHICAGO$"
+
+[DefaultInstall]
+CopyFiles = Scheme.Cur, Scheme.Txt
+AddReg    = Scheme.Reg
+
+[DestinationDirs]
+Scheme.Cur = 10,"%CUR_DIR%"
+Scheme.Txt = 10,"%CUR_DIR%"
+
+[Scheme.Reg]
+HKCU,"Control Panel\Cursors\Schemes","%SCHEME_NAME%",,"%10%\%CUR_DIR%\%pointer%,%10%\%CUR_DIR%\%help%,%10%\%CUR_DIR%\%work%,%10%\%CUR_DIR%\%busy%,%10%\%CUR_DIR%\%cross%,%10%\%CUR_DIR%\%Text%,%10%\%CUR_DIR%\%Hand%,%10%\%CUR_DIR%\%unavailiable%,%10%\%CUR_DIR%\%Vert%,%10%\%CUR_DIR%\%Horz%,%10%\%CUR_DIR%\%Dgn1%,%10%\%CUR_DIR%\%Dgn2%,%10%\%CUR_DIR%\%move%,%10%\%CUR_DIR%\%alternate%,%10%\%CUR_DIR%\%link%"
+
+; -- Common Information
+
+[Scheme.Cur]
+Multicursor Normal Select.cur
+Multicursor Help Select.ani
+Multicursor Working in background.ani
+Multicursor Busy.ani
+Multicursor Precision Select.ani
+Multicursor Text Select.ani
+Multicursor Handwriting.ani
+Multicursor Unavailable.ani
+Multicursor Move Vertical.cur
+Multicursor Move Horizontal.cur
+Multicursor Move Diagonal 1.cur
+Multicursor Move Diagonal 2.cur
+Multicursor Move All.cur
+Multicursor Alternate Select.ani
+Multicursor Link Select.ani
+
+[Strings]
+CUR_DIR       = "Cursors\Multicursor"
+SCHEME_NAME   = "Multicursor"
+pointer       = "Multicursor Normal Select.cur"
+help          = "Multicursor Help Select.ani"
+work          = "Multicursor Working in background.ani"
+busy          = "Multicursor Busy.ani"
+text          = "Multicursor Text Select.ani"
+unavailiable  = "Multicursor Unavailable.ani"
+vert          = "Multicursor Move Vertical.cur"
+horz          = "Multicursor Move Horizontal.cur"
+dgn1          = "Multicursor Move Diagonal 1.cur"
+dgn2          = "Multicursor Move Diagonal 2.cur"
+move          = "Multicursor Move All.cur"
+link          = "Multicursor Link Select.ani"
+cross         = "Multicursor Precision Select.ani"
+hand          = "Multicursor Handwriting.ani"
+alternate     = "Multicursor Alternate Select.ani"

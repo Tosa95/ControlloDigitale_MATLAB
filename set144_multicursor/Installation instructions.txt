@@ -1,0 +1,25 @@
+------------------------------------------------------------------------------------------------
+
+
+Installation instructions below.
+
+------------------------------------------------------------------------------------------------
+
+
+To install Multicursor cursor set:
+
+Step 1:
+Right click the "Multicursor.zip" folder (which this file is contained in) and select "Extract here"
+
+Step 2:
+Enter the extracted "Multicursor Cursors" folder and right click "Multicursor Cursors Install.inf" and select "Install"
+
+Step 3:
+Open the start menu and open Control Panel, in the control panel options, select Mouse.
+
+Step 4:
+Navigate to "Pointers" and select the drop down box below "Scheme", from this selection, pick "Multicursor"
+
+Step 5:
+Select "OK" or "Apply". You can return to the Mouse menu anytime by repeating steps 3 and 4 to change your
+mouse cursor at any time.

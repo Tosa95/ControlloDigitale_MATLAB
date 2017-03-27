@@ -1,0 +1,27 @@
+function out = prova_sim_sistema (u)
+
+%definisco variabili persistent per mantenere lo stato del sistema
+%simulato.
+%Le variabili persistent mantengono il loro valore anche tra chiamate
+%differenti
+persistent om1 om2 um1 um2 
+
+    
+    if t==0
+       om2=0;
+       om1=0;
+       um1=0;
+       um2=0;
+    end
+
+    out = 1.856*om1 - 0.8607*om2 + 0.4663*um1 - 0.4617*um2; %Calcolo l'eqz alle differenze
+    
+    %Faccio gli scambi per prepararmi al calcolo successivo
+    
+    om2=om1;
+    om1=out;
+    um2=um1;
+    um1=u;
+
+end
+

@@ -1,0 +1,12 @@
+clear all
+num_c=1;
+den_c=[1 2 1];
+sys_c=tf(num_c,den_c);
+
+Tc=2*pi/500;
+G_zoh=tf(1, [Tc/2 1]);
+G_a=series(sys_c,G_zoh);
+
+load controllore
+
+C_d=c2d(tf(C),Tc,'tustin')

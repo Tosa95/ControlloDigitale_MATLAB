@@ -12,4 +12,6 @@ sys = (10*s + 1)/((s + 1)*(2*s+1));
 
 systd = c2d(sys, Ts, 'zoh') %Converto da continuo a discreto con zoh
 
+%per punto 3 devo fare equazione alle differenze
+
 bode (sys, systd);

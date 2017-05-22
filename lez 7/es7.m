@@ -23,19 +23,20 @@ G_a = G * ZOH * Camp;
 
 %S3: massima sovraelongazione al 25% --> cerco smorzamento tramite il
 %grafico esponenziale
-d = 0.45;
+d = 0.45;  % ---> PM > 45°
 
 %S2: tempo assestamento al 2% --> uso formula e trovo wn che consideriamo
 %uguale a wt (pulsazione di taglio del sist aperto)
-% wn >= 4 / 0.45 = 9
+% wn >= 4 / 0.45    --->    Wc > 9
 
 %S4: l'errore entra sulla linea di retroaz --> uso fdt = L / (1+L) -->
-%fuori banda considero L piccolo --> L(100j)<=-40dB
+%fuori banda considero L piccolo 
+%   ---> L(100j)<=-40dB
 
 
 %eseguiamo lo script e avviamo sisotool(G_a) da linea
 %tasto destro (usando freccina) e scegliamo edit compensator
-%abbiamo aggiunto un polo in -0.1 (-10^-1) perchè alzare il grafico avrebbe
+%abbiamo aggiunto uno zero in -0.1 (-10^-1) perchè alzare il grafico avrebbe
 %reso il sistema instabile
 
 %{vediamo che la S4 non è rispettata --> aggiungiamo un polo (cosa che
@@ -45,8 +46,11 @@ d = 0.45;
 
 %esportiamo C
 
-%come da richiesta discretizziamo C con tustin (da fare il console)
-%C_d = c2d(tf(C), T, 'tustin'); (usare tf(C)!!!)
+%una volta esportato C lo salviamo come file .mat
+load('controllore7.mat');
+C_d = c2d(tf(C), T, 'tustin');
+
+bode(series(G_a, C))
 
 %apriamo simulink e inseriamo tutti i blocchi necessari ricordando di usare
 %come sistema G e non G_a poichè la il blocco "Discrete Transfer Fcn"

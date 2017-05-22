@@ -9,4 +9,4 @@ G_a=series(sys_c,G_zoh);
 
 load controllore
 
-C_d=c2d(tf(C),Tc,'tustin')
+C_d = c2d(tf(C),Tc,'tustin')
